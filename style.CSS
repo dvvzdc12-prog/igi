@@ -1,0 +1,165 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Montserrat";
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.container {
+  max-width: 1140px;
+  margin: 0 auto;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.col-6 {
+  width: 50%;
+  padding: 0 15px;
+}
+
+.header {
+  background-color: #252525;
+  padding: 30px 0;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 5;
+}
+.header__logo {
+  color: #fafafa;
+  text-transform: uppercase;
+}
+.header__container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.header__menu {
+  display: flex;
+  column-gap: 50px;
+}
+.header__menu__item {
+  list-style: none;
+}
+.header__menu__item a {
+  text-decoration: none;
+  font-size: 20px;
+  color: #fafafa;
+}
+
+.burger-btn {
+  display: none;
+}
+
+.banner {
+  background-image: url("https://avatars.mds.yandex.net/i?id=a5abf2240d87b08f7faec9ce164e9ab45464c91c-5112030-images-thumbs&n=13");
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+}
+
+
+
+
+
+
+
+@media screen and (max-width: 1200px) {
+  .container {
+    max-width: 960px;
+  }
+}
+@media screen and (max-width: 992px) {
+  .container {
+    max-width: 720px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .container {
+    max-width: 540px;
+  }
+  .col-6 {
+    width: 100%;
+  }
+  .row {
+    row-gap: 15px;
+  }
+  header {
+    position: relative;
+  }
+  .header::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #252525;
+    z-index: 2;
+  }
+  .header__logo {
+    position: relative;
+    z-index: 5;
+  }
+  .burger-btn {
+    display: flex;
+    width: 50px;
+    position: relative;
+    z-index: 5;
+    align-items: center;
+  }
+  .burger-btn span {
+    display: block;
+    height: 5px;
+    width: 100%;
+    background-color: #fafafa;
+    position: relative;
+  }
+  .burger-btn span::before, .burger-btn span::after {
+    content: "";
+    display: block;
+    height: 5px;
+    width: 100%;
+    background-color: #fafafa;
+    position: absolute;
+  }
+  .burger-btn span::before {
+    top: -15px;
+  }
+  .burger-btn span::after {
+    bottom: -15px;
+  }
+  .header__menu {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    justify-content: center;
+    background-color: #252525;
+    height: 100%;
+    align-items: center;
+    transition: 0.5s;
+  }
+  .header__menu-show {
+    top: 80px;
+  }
+}
+@media screen and (max-width: 576px) {
+  .container {
+    max-width: 100%;
+    padding: 0 10px;
+  }
+  .header__menu {
+    column-gap: 15px;
+  }
+}
